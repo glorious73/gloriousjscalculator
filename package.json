@@ -1,0 +1,23 @@
+{
+  "name": "gloriousjscalculator",
+  "version": "1.0.0",
+  "source": "index.html",
+  "browserslist": "> 1%, last 2 versions, not dead",
+  "description": "javascript calculator",
+  "main": "app.js",
+  "scripts": {
+    "dev": "parcel ",
+    "build": "parcel build"
+  },
+  "keywords": [
+    "calculator",
+    "js",
+    "glorious73",
+    "practice"
+  ],
+  "author": "Amjad Abujamous",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.6.0"
+  }
+}
