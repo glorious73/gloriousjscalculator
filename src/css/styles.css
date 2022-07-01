@@ -11,16 +11,13 @@ html {
 }
 
 :root {
-    --white: #fff;
-    --whiteborder: #ddd;
-    --lightwhite: #effbfe;
-    --grayborder: #ededed;
-    --lightgray: #aaa;
-    --gray: #777;
-    --black: #150605;
-    --lightblue: #ace6ec;
-    --lightred: #f47b6e;
-    --red: #c26434;
+    --primary-color: #1D2026;
+    --secondary-color: #292D36;
+    --tertiary-color: #272B33;
+    --accent-color: #a1a1a6;
+    --text-color: #FFFFFF;
+    --operation-color: #F26B6B;
+    --greyed-out-color: #62646B;
 }
 
 body {
@@ -29,32 +26,29 @@ body {
     flex-direction: column;
     margin: 0;
     overflow-x: hidden;
-    background-color: var(--white);
-    font-family: "Nunito", Helvetica, sans-serif;
+    font-family: 'Quicksand', Helvetica, sans-serif;
 }
 
 .body-container {
     display: flex;
     flex-direction: row;
-    min-height: 99vh;
+    min-height: 100vh;
 }
 
 .sidebar {
     display: flex;
     flex-direction: column;
-    flex: 20%;
-    height: 90%;
+    flex: 22%;
     padding: 2rem 2rem 0 2rem;
-    background-color: #00043d;
-    color: #fff;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    flex: 70%;
-    height: 90%;
+    flex: 68%;
     padding: 2rem 2rem 0 2rem;
-    background-color: #070b3e;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--text-color);
 }

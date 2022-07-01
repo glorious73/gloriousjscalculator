@@ -136,19 +136,13 @@
   /* /Size */
   /* Appearance */
   .text-white {
-    color: var(--white);
-  }
-  .text-lightwhite {
-      color: var(--lightwhite);
+    color: #fff;
   }
   .text-gray {
-    color: var(--gray);
+    color: #444;
   }
   .text-black {
-      color: var(--black);
-  }
-  .text-red {
-      color: var(--red);
+      color: #000;
   }
   .word-wrap-10 {
     word-wrap: break-word;
