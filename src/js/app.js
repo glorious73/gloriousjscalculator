@@ -15,6 +15,9 @@ export default class App {
     }
 
     updateView() {
+        // TODO: Update this to do two things
+        // 1. Change the content view
+        // 2. Update the sidebar's active element
         if(this.currentComponent) {
             this.appElement.innerHTML = '';
             this.appElement.appendChild(document.createElement(this.currentComponent.name));

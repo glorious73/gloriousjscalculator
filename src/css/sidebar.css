@@ -1,0 +1,21 @@
+.sidebar-menu {
+    width: 100%;
+    margin: auto;
+    padding: 4rem 0;
+    display: grid;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 40% 40%;
+    grid-template-areas: 
+    "firstfirst firstsecond" 
+    "secondfirst secondsecond"
+    "thirdfirst thirdsecond";
+    gap: 40px 20px;
+    justify-items: stretch;
+    align-items: center;
+    place-content: center center;
+}
+
+.sidebar-item {
+    place-self: center center;
+    padding: 1rem;
+}

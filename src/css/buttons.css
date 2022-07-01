@@ -1,0 +1,21 @@
+.hyperlink {
+    background-color: var(--tertiary-color);
+    color: var(--accent-color);
+    border: 1px solid var(--tertiary-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+.hyperlink:hover {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+}
+.hyperlink.active {
+    background-color: var(--accent-color);
+    color: var(--tertiary-color);
+    font-weight: bold;
+}
+.hyperlink.active:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+}

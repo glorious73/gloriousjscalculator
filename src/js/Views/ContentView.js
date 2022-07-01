@@ -1,6 +1,7 @@
 const template = document.createElement('template');
 
 template.innerHTML = /*html*/`
+    <link rel="stylesheet" href="${localStorage.getItem("cssFileName")}">
     <div>
         <h1>Content is here!</h1>
     </div>
