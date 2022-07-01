@@ -2,6 +2,7 @@ export default class App {
     constructor(selector) {
         this.appElement = document.querySelector(selector);
         this.components = {};
+        this.saveCssFileNameToLocalStorage();
     }
 
     addComponent(component) {
@@ -18,5 +19,11 @@ export default class App {
             this.appElement.innerHTML = '';
             this.appElement.appendChild(document.createElement(this.currentComponent.name));
         }
+    }
+
+    saveCssFileNameToLocalStorage() {
+        let cssFileName = document.querySelector("#csslink").href;
+        cssFileName = cssFileName.substring(cssFileName.lastIndexOf('/')); 
+        localStorage.setItem("cssFileName", cssFileName);
     }
 }
