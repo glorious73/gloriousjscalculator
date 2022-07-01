@@ -2,7 +2,7 @@ const template = document.createElement('template');
 
 template.innerHTML = /*html*/`
     <link rel="stylesheet" href="${localStorage.getItem("cssFileName")}">
-    <h1>Glorious Calculator<h1>
+    <h1 style="align-self:center;">Glorious Calculator<h1>
     <section class="sidebar-menu">
         <a class="sidebar-item hyperlink active">C1</a>
         <a class="sidebar-item hyperlink">C2</a>
