@@ -1,5 +1,6 @@
 @import 'sidebar.css';
 @import 'buttons.css';
+@import 'footer.css';
 @import 'utils.css';
 
 * {
@@ -13,12 +14,12 @@ html {
 }
 
 :root {
-    --primary-color: #1D2026;
-    --secondary-color: #292D36;
-    --tertiary-color: #272B33;
-    --accent-color: #a1a1a6;
-    --text-color: #FFFFFF;
-    --operation-color: #F26B6B;
+    --primary-color: #ffffff;
+    --secondary-color: #f4f5f7;
+    --tertiary-color: #008779;
+    --accent-color: #ffffff;
+    --text-color: #000000;
+    --operation-color: #191923;
     --greyed-out-color: #62646B;
 }
 
@@ -35,15 +36,6 @@ body {
     display: flex;
     flex-direction: row;
     min-height: 100vh;
-}
-
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    flex: 22%;
-    padding: 2rem 2rem 0 2rem;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
 }
 
 .content {

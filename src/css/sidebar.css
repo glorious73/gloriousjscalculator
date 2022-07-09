@@ -1,7 +1,22 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex: 22%;
+    padding: 2rem 2rem 0 2rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.sidebar-header {
+    flex-grow: 0;
+    align-self: center;
+}
+
 .sidebar-menu {
+    flex-grow: 0;
     width: 100%;
-    margin: auto;
-    padding: 4rem 0;
+    margin: 0 auto;
+    padding: 6rem 0;
     display: grid;
     grid-template-rows: 100px 100px 100px;
     grid-template-columns: 40% 40%;
@@ -9,9 +24,7 @@
     "firstfirst firstsecond" 
     "secondfirst secondsecond"
     "thirdfirst thirdsecond";
-    gap: 40px 20px;
-    justify-items: stretch;
-    align-items: center;
+    gap: 30px 5px;
     place-content: center center;
 }
 
