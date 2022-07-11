@@ -1,24 +1,25 @@
 .hyperlink {
-    background-color: var(--tertiary-color);
+    background-color: var(--element-color);
     color: var(--accent-color);
-    border: 1px solid var(--tertiary-color);
+    border: 1px solid var(--element-color);
     border-radius: 1rem;
     padding: 1.6rem;
     font-size: 1.5rem;
     font-weight: 700 !important;
 }
 .hyperlink:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
     cursor: pointer;
 }
 .hyperlink.active {
-    background-color: var(--accent-color);
-    border: 1px solid var(--accent-color);
-    color: var(--tertiary-color);
+    background-color: var(--active-color);
+    border: 1px solid var(--active-color);
+    color: var(--element-color);
     font-weight: bold;
 }
 .hyperlink.active:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
     cursor: pointer;
 }

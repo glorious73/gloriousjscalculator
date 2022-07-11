@@ -10,7 +10,7 @@
 }
 
 .footer-link {
-    color: var(--tertiary-color);
+    color: var(--element-color);
     text-decoration: none;
     font-weight: bold;
 }
