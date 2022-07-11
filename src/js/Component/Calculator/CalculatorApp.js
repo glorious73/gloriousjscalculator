@@ -6,8 +6,8 @@ template.innerHTML = /*html*/`
     <div class="calculator-pad">
         <!-- First row -->
         <button class="operator-button" data-action="clear">AC</button>
-        <button class="operator-button" data-action="square">x^2</button>
-        <button class="operator-button" data-action="squareroot">Root</button>
+        <button class="operator-button" data-action="square">x<sup>2</sup></button>
+        <button class="operator-button" data-action="squareroot">√x</button>
         <button class="operator-button" data-action="divide">÷</button>
         <!-- Second row -->
         <button class="operand-button">7</button>
