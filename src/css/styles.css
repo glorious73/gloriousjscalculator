@@ -2,6 +2,7 @@
 @import 'buttons.css';
 @import 'footer.css';
 @import 'utils.css';
+@import 'calculator.css';
 
 * {
     padding: 0;

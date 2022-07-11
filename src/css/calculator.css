@@ -1,0 +1,67 @@
+.calculator-page {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 0;
+}
+
+.calculator-result {
+    font-size: 4rem;
+    padding: 0 0.8rem 0.8rem 0;
+    text-align: right;
+}
+
+.calculator-pad {
+    width: 100%;
+    margin: auto;
+    padding: 0 2rem 0 2rem;
+    display: grid;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+    grid-template-columns: 22% 22% 22% 22%;
+    grid-template-areas: 
+    "firstfirst firstsecond firstthird firstfourth" 
+    "secondfirst secondsecond secondthird secondfourth"
+    "thirdfirst thirdsecond thirdthird thirdfourth"
+    "fourthfirst fourthsecond fourththird fourthfourth"
+    "fifthzero fifthzero fifththird fifthfourth";
+    gap: 30px 30px;
+    place-content: center center;
+}
+
+.calculator-item {
+    place-self: center center;
+    padding: 2rem;
+}
+
+.operator-button {
+    background-color: var(--tertiary-color);
+    color: var(--accent-color);
+    border: 1px solid var(--tertiary-color);
+}
+.operator-button:hover {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.operand-button {
+    background-color: var(--tertiary-color);
+    color: var(--accent-color);
+    border: 1px solid var(--tertiary-color);
+}
+.operand-zero-button {
+    grid-area: fifthzero;
+    background-color: var(--tertiary-color);
+    color: var(--accent-color);
+    border: 1px solid var(--tertiary-color);
+}
+.operand-button:hover {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.operand-button, .operand-zero-button, .operator-button {
+    border-radius: 1rem;
+    padding: 1.6rem;
+    font-size: 1.8rem;
+    font-weight: 700 !important;
+}

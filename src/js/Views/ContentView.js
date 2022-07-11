@@ -1,10 +1,10 @@
+import CalculatorPage from "./Pages/CalculatorPage";
+
 const template = document.createElement('template');
 
 template.innerHTML = /*html*/`
     <link rel="stylesheet" href="${localStorage.getItem("cssFileName")}">
-    <div>
-        <h1>Content is here!</h1>
-    </div>
+    <calculator-page class="calculator-page"></calculator-page>
 `;
 
 export default class ContentView extends HTMLElement {
