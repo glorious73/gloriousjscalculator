@@ -1,6 +1,6 @@
 export default class Observable {
     constructor(value) {
-      this._listeners = [];
+      this._listeners = []; // listener is, in itself, an update() function
       this._value = value;
     }
 
@@ -12,12 +12,16 @@ export default class Observable {
       this._listeners.forEach((listener) => listener(this._value));
     }
   
-    subscribe(listener) {
+    attach(listener) {
       this._listeners.push(listener);
     }
 
-    unsubscribe(listener) {
-        // TODO
+    detach(listener) {
+        this._listeners = this._listeners.filter((item) => {
+                if (item !== listener) 
+                    return item;
+            }
+        );
     }
   
     get value() {
