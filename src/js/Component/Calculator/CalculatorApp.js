@@ -33,6 +33,7 @@ template.innerHTML = /*html*/`
     </div>
 `;
 
+// TODO: key listeners
 export default class CalculatorApp extends HTMLElement {
     constructor() {
         super();
@@ -155,6 +156,7 @@ export default class CalculatorApp extends HTMLElement {
     updateDisplay(newDisplayValue) {
         if(this.canUpdateDisplay)
             this.result.value = newDisplayValue;
+        // TODO: inform user to clear display
     }
 
     clear() {
