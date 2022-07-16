@@ -76,8 +76,7 @@ export default class CalculatorApp extends HTMLElement {
         }
         else {
             if(operation === 'decimal')
-                this.updateDisplay(this.result.value); // TODO
-                //this.result.value += '.';
+                this.updateDisplay(this.result.value += '.');
             else
                 if(operation === 'calculate')
                     this.calculate();
@@ -130,7 +129,12 @@ export default class CalculatorApp extends HTMLElement {
             const calculationInputs = calculation.split(" ");
             this.firstValue = calculationInputs[0];
             this.secondValue = calculationInputs[2];
-            // 2. do operation
+            // 2. refine values
+            if(this.firstValue.endsWith('.'))
+                this.firstValue += '0';
+            if(this.secondValue.endsWith('.'))
+                this.secondValue += '0';
+            // 3. do operation
             let result = '';
             const firstVal = parseFloat(this.firstValue);
             const secondVal = parseFloat(this.secondValue);
@@ -142,7 +146,7 @@ export default class CalculatorApp extends HTMLElement {
                 result = firstVal * secondVal;
             else if (this.operator === 'divide')
                 result = firstVal / secondVal;
-            // 3. update display
+            // 4. update display
             this.updateDisplay(`${this.result.value} = ${result}`);
             this.canUpdateDisplay = false;
         }
