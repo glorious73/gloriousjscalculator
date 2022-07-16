@@ -39,11 +39,12 @@ export default class CalculatorApp extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         // application variable
-        this.result          = new Observable(""); // string since operators will also be shown
-        this.firstValue      = 0;
-        this.secondValue     = 0;
-        this.operator        = undefined;
-        this.previousKeyType = '';
+        this.result           = new Observable(""); // string since operators will also be shown
+        this.canUpdateDisplay = true;
+        this.firstValue       = 0;
+        this.secondValue      = 0;
+        this.operator         = undefined;
+        this.previousKeyType  = '';
     }
 
     connectedCallback() {
@@ -71,17 +72,19 @@ export default class CalculatorApp extends HTMLElement {
         const operation = calculatorKey.dataset.operation;
         if(!operation) {
             this.previousKeyType = 'number';
-            this.result.value += calculatorKey.innerText;
+            this.updateDisplay(`${this.result.value}${calculatorKey.innerText}`);
         }
         else {
             if(operation === 'decimal')
-                this.result.value = this.result.value;
+                this.updateDisplay(this.result.value); // TODO
                 //this.result.value += '.';
             else
                 if(operation === 'calculate')
                     this.calculate();
                 else if(operation === 'clear')
                     this.clear();
+                else if(operation === 'square' || operation === 'squareroot')
+                    this.calculateOneOperandOperation(calculatorKey, operation);
                 else
                     this.setOperation(calculatorKey, operation);
         }
@@ -91,16 +94,37 @@ export default class CalculatorApp extends HTMLElement {
         if(!this.operator) {
             this.previousKeyType = 'operator';
             this.operator = operation;
-            this.result.value += ` ${calculatorKey.innerText} `;
+            this.updateDisplay(`${this.result.value} ${calculatorKey.innerText} `);
         }
     }
 
-    canCalculate() {
-        return (this.previousKeyType === 'number' && this.operator);
+    calculateOneOperandOperation(calculatorKey, operation) {
+        const canCalculate = (this.previousKeyType === 'number' && !this.operator);
+        if(canCalculate) {
+            // set calculator logic
+            this.previousKeyType = 'operator';
+            this.operator = operation;
+            // get value
+            const calculation = this.result.value;
+            const calculationInputs = calculation.split(" ");
+            this.firstValue = calculationInputs[0];
+            switch(this.operator) {
+                case 'square':
+                    this.updateDisplay(`${this.result.value}<sup>2</sup> = ${Math.pow(this.firstValue, 2)}`);
+                    break;
+                case 'squareroot':
+                    this.updateDisplay(`√${this.result.value} = ${Math.sqrt(this.firstValue)}`);
+                    break;
+                default:
+                    this.clear();
+            }
+            this.canUpdateDisplay = false;
+        }
     }
 
     calculate() {
-        if(this.canCalculate()) {
+        const canCalculate = (this.previousKeyType === 'number' && this.operator);
+        if(canCalculate) {
             // 1. get values
             const calculation = this.result.value;
             const calculationInputs = calculation.split(" ");
@@ -110,26 +134,32 @@ export default class CalculatorApp extends HTMLElement {
             let result = '';
             const firstVal = parseFloat(this.firstValue);
             const secondVal = parseFloat(this.secondValue);
-            if (this.operator === 'add') {
+            if (this.operator === 'add')
                 result = firstVal + secondVal;
-            } else if (this.operator === 'subtract') {
+            else if (this.operator === 'subtract')
                 result = firstVal - secondVal;
-            } else if (this.operator === 'multiply') {
+            else if (this.operator === 'multiply')
                 result = firstVal * secondVal;
-            } else if (this.operator === 'divide') {
+            else if (this.operator === 'divide')
                 result = firstVal / secondVal;
-            }
-            // 3. display result
-            this.result.value += ` = ${result}`;
+            // 3. update display
+            this.updateDisplay(`${this.result.value} = ${result}`);
+            this.canUpdateDisplay = false;
         }
     }
 
+    updateDisplay(newDisplayValue) {
+        if(this.canUpdateDisplay)
+            this.result.value = newDisplayValue;
+    }
+
     clear() {
-        this.result.value    = '';
-        this.firstValue      = 0;
-        this.secondValue     = 0;
-        this.operator        = undefined;
-        this.previousKeyType = '';
+        this.result.value     = '';
+        this.firstValue       = 0;
+        this.secondValue      = 0;
+        this.operator         = undefined;
+        this.previousKeyType  = '';
+        this.canUpdateDisplay = true;
         this.shadowRoot.querySelector('[data-bind="result"]').innerHTML = '0';
     }
 }
