@@ -1,3 +1,4 @@
+import SidebarItemComponent from "../Component/SidebarItemComponent";
 import FooterComponent from "../Component/FooterComponent";
 
 const template = document.createElement('template');
@@ -6,8 +7,8 @@ template.innerHTML = /*html*/`
     <link rel="stylesheet" href="${localStorage.getItem("cssFileName")}">
     <h1 class="sidebar-header">Glorious Calculator</h1>
     <section class="sidebar-menu">
-        <a class="sidebar-item hyperlink active">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  class="sidebar-icon" viewBox="0 0 60 60" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
+        <sidebaritem-component class="sidebar-item hyperlink active" data-href="#/calculator">
+            <svg slot="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  class="sidebar-icon" viewBox="0 0 60 60" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
                 <g>
                     <path d="M21,14h-5V9c0-0.553-0.448-1-1-1s-1,0.447-1,1v5H9c-0.552,0-1,0.447-1,1s0.448,1,1,1h5v5c0,0.553,0.448,1,1,1s1-0.447,1-1
                         v-5h5c0.552,0,1-0.447,1-1S21.552,14,21,14z"/>
@@ -21,9 +22,9 @@ template.innerHTML = /*html*/`
                         c0.391-0.391,0.391-1.023,0-1.414L16.414,43l4.293-4.293C21.098,38.316,21.098,37.684,20.707,37.293z"/>
                 </g>
             </svg>
-        </a>
-        <a class="sidebar-item hyperlink">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="sidebar-icon" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
+        </sidebaritem-component>
+        <sidebaritem-component class="sidebar-item hyperlink" data-href="#/scientificcalculator">
+            <svg slot="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="sidebar-icon" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
                 <g>
                     <g>
                         <g>
@@ -62,9 +63,9 @@ template.innerHTML = /*html*/`
                     </g>
                 </g>
             </svg>
-        </a>
-        <a class="sidebar-item hyperlink">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="sidebar-icon" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
+        </sidebaritem-component>
+        <sidebaritem-component class="sidebar-item hyperlink" data-href="#/currencyexchange">
+            <svg slot="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="sidebar-icon" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
                 <g>
                     <g>
                         <path d="M490.667,234.667c-12.8,0-21.333,8.533-21.333,21.333c0,117.333-96,213.333-213.333,213.333
@@ -114,9 +115,9 @@ template.innerHTML = /*html*/`
                     </g>
                 </g>
             </svg>
-        </a>
-        <a class="sidebar-item hyperlink">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="sidebar-icon" viewBox="0 0 250.189 250.189" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
+        </sidebaritem-component>
+        <sidebaritem-component class="sidebar-item hyperlink" data-href="#/temperaturecalculator">
+            <svg slot="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="sidebar-icon" viewBox="0 0 250.189 250.189" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
                 <g>
                     <path d="M159.845,147.251V34.744C159.845,15.586,144.255,0,125.093,0c-19.159,0-34.746,15.586-34.746,34.744v112.506
                         c-14.234,10.843-22.617,27.59-22.617,45.575c0,31.631,25.732,57.364,57.363,57.364c31.633,0,57.367-25.733,57.367-57.364
@@ -128,47 +129,47 @@ template.innerHTML = /*html*/`
                         c0,13.767,11.16,24.931,24.93,24.931c13.773,0,24.932-11.164,24.932-24.931C150.026,181.663,142.7,172.223,132.595,169.042z"/>
                 </g>
             </svg>
-        </a>
-        <a class="sidebar-item hyperlink">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="sidebar-icon" viewBox="0 0 470 470" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
-            <g>
-                <path d="M462.5,425H7.5c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h455c4.143,0,7.5-3.358,7.5-7.5S466.643,425,462.5,425z"/>
-                <path d="M462.5,455H7.5c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h455c4.143,0,7.5-3.358,7.5-7.5S466.643,455,462.5,455z"/>
-                <path d="M462.5,30h-25v-7.5C437.5,10.093,427.406,0,415,0s-22.5,10.093-22.5,22.5V30h-75v-7.5C317.5,10.093,307.406,0,295,0
-                    s-22.5,10.093-22.5,22.5V30h-75v-7.5C197.5,10.093,187.407,0,175,0s-22.5,10.093-22.5,22.5V30h-75v-7.5C77.5,10.093,67.407,0,55,0
-                    S32.5,10.093,32.5,22.5V30h-25C3.358,30,0,33.358,0,37.5v365c0,4.142,3.358,7.5,7.5,7.5h455c4.143,0,7.5-3.358,7.5-7.5v-365
-                    C470,33.358,466.643,30,462.5,30z M407.5,22.5c0-4.136,3.364-7.5,7.5-7.5s7.5,3.364,7.5,7.5v30c0,4.136-3.364,7.5-7.5,7.5
-                    s-7.5-3.364-7.5-7.5V22.5z M287.5,22.5c0-4.136,3.364-7.5,7.5-7.5s7.5,3.364,7.5,7.5v30c0,4.136-3.364,7.5-7.5,7.5
-                    s-7.5-3.364-7.5-7.5V22.5z M167.5,22.5c0-4.136,3.364-7.5,7.5-7.5s7.5,3.364,7.5,7.5v30c0,4.136-3.364,7.5-7.5,7.5
-                    s-7.5-3.364-7.5-7.5V22.5z M47.5,22.5c0-4.136,3.364-7.5,7.5-7.5s7.5,3.364,7.5,7.5v30c0,4.136-3.364,7.5-7.5,7.5
-                    s-7.5-3.364-7.5-7.5V22.5z M32.5,45v7.5C32.5,64.907,42.593,75,55,75s22.5-10.093,22.5-22.5V45h75v7.5
-                    c0,12.407,10.093,22.5,22.5,22.5s22.5-10.093,22.5-22.5V45h75v7.5c0,12.407,10.094,22.5,22.5,22.5s22.5-10.093,22.5-22.5V45h75v7.5
-                    c0,12.407,10.094,22.5,22.5,22.5s22.5-10.093,22.5-22.5V45H455v77.3H15V45H32.5z M15,395V137.3h440V395H15z"/>
-                <path d="M412,226.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S416.143,226.8,412,226.8z"/>
-                <path d="M331,226.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S335.143,226.8,331,226.8z"/>
-                <path d="M250,226.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S254.143,226.8,250,226.8z"/>
-                <path d="M169,226.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S173.142,226.8,169,226.8z"/>
-                <path d="M88,226.8H58c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S92.142,226.8,88,226.8z"/>
-                <path d="M331,280.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S335.143,280.8,331,280.8z"/>
-                <path d="M250,280.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S254.143,280.8,250,280.8z"/>
-                <path d="M169,280.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S173.142,280.8,169,280.8z"/>
-                <path d="M88,280.8H58c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S92.142,280.8,88,280.8z"/>
-                <path d="M331,334.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S335.143,334.8,331,334.8z"/>
-                <path d="M412,280.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S416.143,280.8,412,280.8z"/>
-                <path d="M412,334.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S416.143,334.8,412,334.8z"/>
-                <path d="M250,334.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S254.143,334.8,250,334.8z"/>
-                <path d="M169,334.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S173.142,334.8,169,334.8z"/>
-                <path d="M88,334.8H58c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S92.142,334.8,88,334.8z"/>
-                <path d="M412,172.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S416.143,172.8,412,172.8z"/>
-                <path d="M331,172.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S335.143,172.8,331,172.8z"/>
-                <path d="M250,172.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S254.143,172.8,250,172.8z"/>
-                <path d="M169,172.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S173.142,172.8,169,172.8z"/>
-                <path d="M88,172.8H58c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S92.142,172.8,88,172.8z"/>
-            </g>
+        </sidebaritem-component>
+        <sidebaritem-component class="sidebar-item hyperlink" data-href="#/datecalculator">
+            <svg slot="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="sidebar-icon" viewBox="0 0 470 470" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
+                <g>
+                    <path d="M462.5,425H7.5c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h455c4.143,0,7.5-3.358,7.5-7.5S466.643,425,462.5,425z"/>
+                    <path d="M462.5,455H7.5c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h455c4.143,0,7.5-3.358,7.5-7.5S466.643,455,462.5,455z"/>
+                    <path d="M462.5,30h-25v-7.5C437.5,10.093,427.406,0,415,0s-22.5,10.093-22.5,22.5V30h-75v-7.5C317.5,10.093,307.406,0,295,0
+                        s-22.5,10.093-22.5,22.5V30h-75v-7.5C197.5,10.093,187.407,0,175,0s-22.5,10.093-22.5,22.5V30h-75v-7.5C77.5,10.093,67.407,0,55,0
+                        S32.5,10.093,32.5,22.5V30h-25C3.358,30,0,33.358,0,37.5v365c0,4.142,3.358,7.5,7.5,7.5h455c4.143,0,7.5-3.358,7.5-7.5v-365
+                        C470,33.358,466.643,30,462.5,30z M407.5,22.5c0-4.136,3.364-7.5,7.5-7.5s7.5,3.364,7.5,7.5v30c0,4.136-3.364,7.5-7.5,7.5
+                        s-7.5-3.364-7.5-7.5V22.5z M287.5,22.5c0-4.136,3.364-7.5,7.5-7.5s7.5,3.364,7.5,7.5v30c0,4.136-3.364,7.5-7.5,7.5
+                        s-7.5-3.364-7.5-7.5V22.5z M167.5,22.5c0-4.136,3.364-7.5,7.5-7.5s7.5,3.364,7.5,7.5v30c0,4.136-3.364,7.5-7.5,7.5
+                        s-7.5-3.364-7.5-7.5V22.5z M47.5,22.5c0-4.136,3.364-7.5,7.5-7.5s7.5,3.364,7.5,7.5v30c0,4.136-3.364,7.5-7.5,7.5
+                        s-7.5-3.364-7.5-7.5V22.5z M32.5,45v7.5C32.5,64.907,42.593,75,55,75s22.5-10.093,22.5-22.5V45h75v7.5
+                        c0,12.407,10.093,22.5,22.5,22.5s22.5-10.093,22.5-22.5V45h75v7.5c0,12.407,10.094,22.5,22.5,22.5s22.5-10.093,22.5-22.5V45h75v7.5
+                        c0,12.407,10.094,22.5,22.5,22.5s22.5-10.093,22.5-22.5V45H455v77.3H15V45H32.5z M15,395V137.3h440V395H15z"/>
+                    <path d="M412,226.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S416.143,226.8,412,226.8z"/>
+                    <path d="M331,226.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S335.143,226.8,331,226.8z"/>
+                    <path d="M250,226.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S254.143,226.8,250,226.8z"/>
+                    <path d="M169,226.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S173.142,226.8,169,226.8z"/>
+                    <path d="M88,226.8H58c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S92.142,226.8,88,226.8z"/>
+                    <path d="M331,280.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S335.143,280.8,331,280.8z"/>
+                    <path d="M250,280.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S254.143,280.8,250,280.8z"/>
+                    <path d="M169,280.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S173.142,280.8,169,280.8z"/>
+                    <path d="M88,280.8H58c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S92.142,280.8,88,280.8z"/>
+                    <path d="M331,334.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S335.143,334.8,331,334.8z"/>
+                    <path d="M412,280.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S416.143,280.8,412,280.8z"/>
+                    <path d="M412,334.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S416.143,334.8,412,334.8z"/>
+                    <path d="M250,334.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S254.143,334.8,250,334.8z"/>
+                    <path d="M169,334.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S173.142,334.8,169,334.8z"/>
+                    <path d="M88,334.8H58c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S92.142,334.8,88,334.8z"/>
+                    <path d="M412,172.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S416.143,172.8,412,172.8z"/>
+                    <path d="M331,172.8h-30c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S335.143,172.8,331,172.8z"/>
+                    <path d="M250,172.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.143,0,7.5-3.358,7.5-7.5S254.143,172.8,250,172.8z"/>
+                    <path d="M169,172.8h-30c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S173.142,172.8,169,172.8z"/>
+                    <path d="M88,172.8H58c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5S92.142,172.8,88,172.8z"/>
+                </g>
             </svg>
-        </a>
-        <a class="sidebar-item hyperlink">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="sidebar-icon" viewBox="0 0 466.008 466.008" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
+        </sidebaritem-component>
+        <sidebaritem-component class="sidebar-item hyperlink" data-href="#/timecalculator">
+            <svg slot="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="sidebar-icon" viewBox="0 0 466.008 466.008" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
                 <g>
                     <g>
                         <g>
@@ -183,7 +184,7 @@ template.innerHTML = /*html*/`
                     </g>
                 </g>
             </svg>
-        </a>
+        </sidebaritem-component>
     </section>
     <footer-component class="footer"></footer-component>
 `;
@@ -197,10 +198,18 @@ export default class SidebarView extends HTMLElement {
 
     connectedCallback() {
         console.log("Sidebar view attached.");
+        document.addEventListener('anchorActiveEvent', evt => this.updateActiveAnchorElement(evt));
     }
 
     disconnectedCallback() {
 
+    }
+
+    updateActiveAnchorElement(evt) {
+        this.shadowRoot.querySelectorAll(".sidebar-item").forEach(element => {
+            const isActiveLocation = (window.location == element.shadowRoot.querySelector('a').href);
+            element.className = isActiveLocation ? 'sidebar-item hyperlink active' : 'sidebar-item hyperlink';
+        });
     }
 }
 
