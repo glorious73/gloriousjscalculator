@@ -5,22 +5,30 @@ export default class App {
         this.saveCssFileNameToLocalStorage();
     }
 
+    instantiateApp() {
+        this.currentComponent = this.components['main-view'];
+        this.appElement.appendChild(document.createElement(this.currentComponent.name));
+    }
+
     addComponent(component) {
         this.components[component.name] = component;
     }
 
-    showComponent(name) {
-        this.currentComponent = this.components[name];
-        this.updateView();
+    showComponent(route) {
+        this.currentComponent = this.components[route.name];
+        this.updateView(route);
     }
 
-    updateView() {
-        // TODO: Update this to do two things
-        // 1. Change the content view
-        // 2. Update the sidebar's active element
+    updateView(route) {
+        console.log(`Route: ${route.name}. Path: ${route.path}.`);
+        // TODO: Fix this
+        const contentView = document.querySelector('main-view').shadowRoot.querySelector('content-view');
         if(this.currentComponent) {
-            this.appElement.innerHTML = '';
-            this.appElement.appendChild(document.createElement(this.currentComponent.name));
+            contentView.innerHTML = `<link rel="stylesheet" href="${localStorage.getItem("cssFileName")}>"`;
+            const newElement = document.createElement('time-page'); // cannot find custom element
+            contentView.shadowRoot.appendChild(`
+                ${document.createElement(this.currentComponent.name)}
+            `);
         }
     }
 
