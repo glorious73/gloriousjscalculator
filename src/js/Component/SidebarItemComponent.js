@@ -29,11 +29,7 @@ export default class SidebarItemComponent extends HTMLElement {
     triggerHashChange(evt) {
         const anchor = this.shadowRoot.querySelector('a');
         window.location = anchor.href;
-        document.dispatchEvent(new CustomEvent('anchorActiveEvent'), {
-            detail: {
-              name: 'cat'
-            }
-        });
+        document.dispatchEvent(new CustomEvent('anchorActiveEvent'));
     }
 }
 

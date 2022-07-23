@@ -20,15 +20,11 @@ export default class App {
     }
 
     updateView(route) {
-        console.log(`Route: ${route.name}. Path: ${route.path}.`);
-        // TODO: Fix this
         const contentView = document.querySelector('main-view').shadowRoot.querySelector('content-view');
         if(this.currentComponent) {
-            contentView.innerHTML = `<link rel="stylesheet" href="${localStorage.getItem("cssFileName")}>"`;
-            const newElement = document.createElement('time-page'); // cannot find custom element
-            contentView.shadowRoot.appendChild(`
-                ${document.createElement(this.currentComponent.name)}
-            `);
+            contentView.shadowRoot.innerHTML = "";
+            const newElement = document.createElement(`${this.currentComponent.name}`); // cannot find custom element
+            contentView.shadowRoot.appendChild(newElement);
         }
     }
 
