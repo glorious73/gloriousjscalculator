@@ -1,0 +1,8 @@
+.temperature-page {
+    display: flex;
+    flex-direction: row;
+}
+
+.temperature-page > * {
+    flex-grow: 1;
+}

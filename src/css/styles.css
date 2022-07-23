@@ -3,6 +3,7 @@
 @import 'footer.css';
 @import 'utils.css';
 @import 'calculator.css';
+@import 'temperature.css';
 
 * {
     padding: 0;

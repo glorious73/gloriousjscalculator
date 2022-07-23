@@ -1,8 +1,14 @@
+import TemperatureInput from "../../Component/Temperature/TemperatureInput";
+import TemperatureResult from "../../Component/Temperature/TemperatureResult";
+
 const template = document.createElement('template');
 
 template.innerHTML = /*html*/`
     <link rel="stylesheet" href="${localStorage.getItem("cssFileName")}">
-    <h1>Temperature Calculator!</h1>
+    <div class="temperature-page">
+        <temperature-input></temperature-input>
+        <temperature-result></temperature-result>
+    </div>
 `;
 
 export default class TemperaturePage extends HTMLElement {
