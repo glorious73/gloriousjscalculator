@@ -3,9 +3,7 @@ export default class Router {
         this.app    = app;
         this.routes = [];
         this.hashChange = this.hashChange.bind(this);
-        this.DOMContentLoaded = this.DOMContentLoaded.bind(this);
         window.addEventListener("hashchange", this.hashChange);
-        window.addEventListener("DOMContentLoaded", this.DOMContentLoaded);
     }
 
     addRoute(name, path) {
@@ -13,10 +11,6 @@ export default class Router {
             name,
             path
         });
-    }
-
-    DOMContentLoaded() {
-        this.app.instantiateApp();
     }
 
     hashChange() {

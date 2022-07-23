@@ -23,7 +23,7 @@ export default class App {
         const contentView = document.querySelector('main-view').shadowRoot.querySelector('content-view');
         if(this.currentComponent) {
             contentView.shadowRoot.innerHTML = "";
-            const newElement = document.createElement(`${this.currentComponent.name}`); // cannot find custom element
+            const newElement = document.createElement(`${this.currentComponent.name}`);
             contentView.shadowRoot.appendChild(newElement);
         }
     }

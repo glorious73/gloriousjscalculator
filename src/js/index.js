@@ -68,3 +68,5 @@ router.addRoute('currency-page', "^#/currencyexchange$");
 router.addRoute('temperature-page', "^#/temperaturecalculator$");
 router.addRoute('date-page', "^#/datecalculator$");
 router.addRoute('time-page', "^#/timecalculator$");
+
+app.instantiateApp();
